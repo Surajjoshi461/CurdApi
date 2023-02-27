@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const verbSchema = mongoose.Schema(
+const petSchema = mongoose.Schema(
   {
-    username: { type: String, required: true },
+    petname: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
     phone: { type: String, required: true },
-    userId: {
+    petId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
       required: true,
@@ -13,4 +13,4 @@ const verbSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("verbs", verbSchema);
+module.exports = mongoose.model("pets", petSchema);
