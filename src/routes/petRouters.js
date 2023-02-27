@@ -9,9 +9,9 @@ const auth = require("../middlewares/auth");
 
 const petRouter = express.Router();
 
-petRouter.get("/", auth, getUser);
+petRouter.get("/", auth, getPet);
 
-petRouter.post("/", auth, postUser);
-petRouter.delete("/:id", auth, deleteUser);
-petRouter.put("/:id", auth, updateUser);
+petRouter.post("/", auth, postPet);
+petRouter.delete("/:id", auth, deletePet);
+petRouter.put("/:id", auth, updatePet);
 module.exports = petRouter;

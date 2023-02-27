@@ -1,6 +1,8 @@
 const express = require("express");
 const verbRouter = require("./routes/verbRouters");
 const userRouter = require("./routes/userRouters");
+const petRouter = require("./routes/petRouters");
+const storeRouter = require("./routes/storeRouters");
 const mongoose = require("mongoose");
 const app = express();
 
@@ -12,6 +14,8 @@ app.use((req, resp, next) => {
 app.use("/users", userRouter);
 
 app.use("/verbs", verbRouter);
+app.use("/pets", petRouter);
+app.use("/stores", storeRouter);
 
 app.get("/", (req, resp) => {
   resp.send("Hello");
